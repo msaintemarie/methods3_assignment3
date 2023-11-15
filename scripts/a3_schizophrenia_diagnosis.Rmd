@@ -54,6 +54,7 @@ There are two different data sets for this assignment:
   - *phonationtime (s):* duration (in seconds) of the recording where speech is present
   - *speechrate (nsyll/dur):**average number of syllables per second
   - *articulation rate (nsyll/ phonationtime):* average number of syllables per second where speech is present
+  - *ASD (speakingtime/nsyll):* average syllable duration
 
 ```{r import_articulation_data}
 
