@@ -8,16 +8,15 @@ output:
       toc_float: yes
       theme: united
       highlight: espresso
-      css: '../../varia/standard.css'
+      css: 'scripts/standard.css'
 geometry: margin=1in
 knit: (function(inputFile, encoding) {
   browseURL(
     rmarkdown::render(
       inputFile,
       encoding = encoding,
-      output_dir = 'documents/assignments/instructions',
+      output_dir = 'documents/',
       output_file = "assignment3_diagnosing_schizophrenia.html"))})
-bibliography: '../../varia/bibliography.bib'
 ---
 
 
