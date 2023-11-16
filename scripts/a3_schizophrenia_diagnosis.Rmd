@@ -8,15 +8,16 @@ output:
       toc_float: yes
       theme: united
       highlight: espresso
-      css: 'scripts/standard.css'
+      css: '../../varia/standard.css'
 geometry: margin=1in
 knit: (function(inputFile, encoding) {
   browseURL(
     rmarkdown::render(
       inputFile,
       encoding = encoding,
-      output_dir = 'documents/',
-      output_file = "assignment3_diagnosing_schizophrenia.html"))})
+      output_dir = 'documents/assignments/instructions',
+      output_file = "a3_diagnosing_schizophrenia.html"))})
+bibliography: '../../varia/bibliography.bib'
 ---
 
 
@@ -52,7 +53,7 @@ There are two different data sets for this assignment:
   - *npause:* number of pauses automatically inferred from the audio (absence of human voice longer than 200 milliseconds)
   - *dur (s):* duration (in seconds) of the full recording
   - *phonationtime (s):* duration (in seconds) of the recording where speech is present
-  - *speechrate (nsyll/dur):**average number of syllables per second
+  - *speechrate (nsyll/dur):*average number of syllables per second
   - *articulation rate (nsyll/ phonationtime):* average number of syllables per second where speech is present
   - *ASD (speakingtime/nsyll):* average syllable duration
 
@@ -92,7 +93,8 @@ After importing the data sets, make sure all common columns and values are named
 In this section, use whatever statistical procedures you think relevant to get a good understanding of the data set, particularly as regards to the differences between linguistic markers of neurotypical and schizophrenic speech. Here as in the following sections, make sure that we understand what you're doing and why you're doing it (you can do this by adding text right before or after the corresponding chunk of code).
 
 Here are some of the things you can do:
-  - Describe the data set (number of studies, number of participants, age, gender, clinical and cognitive features of the two groups) and assess whether the groups (schizophrenia and controls) are balanced.
+
+  - Describe the data set and assess whether the groups (schizophrenia and controls) are balanced.
   - Describe the acoustic profile of a schizophrenic voice: which features are different? E.g. People with schizophrenia tend to have high-pitched voice. 
 
 ```{r summarize_dataset}
@@ -110,7 +112,7 @@ The following packages will be useful to you here:
 
   - [**tidymodels**](https://tidymodels.tidymodels.org/): “meta-package” for modeling and statistical analysis that shares the underlying design philosophy, grammar, and data structures of the tidyverse.
   - [**rsample**](https://rsample.tidymodels.org/): as infrastructure for resampling data so that models can be assessed and empirically validated.
-  -[**groupdata2**][(https://cran.r-project.org/web/packages/groupdata2/vignettes/introduction_to_groupdata2.html)]: an alternative to rsample that allows resampling with deeper grouping
+  - [**groupdata2**][(https://cran.r-project.org/web/packages/groupdata2/vignettes/introduction_to_groupdata2.html)]: an alternative to rsample that allows resampling with deeper grouping
   - [**tune**](https://tune.tidymodels.org/): contains the functions to optimize model hyper-parameters.
   - [**dials**](https://dials.tidymodels.org/): tools to create and manage values of tuning parameters.
   - [**recipes**](https://recipes.tidymodels.org/index.html): a general data preprocessor that can create model matrices incorporating feature engineering, imputation, and other tools.
@@ -175,7 +177,8 @@ For a detailed list of the model types, engines, and arguments that can be used 
 
 Finally, briefly summarize and discuss the methodological choices you've made throughout as well as the results obtained at the different modeling stages. In particular, I would like to get your input as regards to the following questions:
 
-  - Based on the performance evaluation of your models, do you think the second and third phase of the third section were worth the extra effort? Was any model successful in diagnosing schizophrenia from voice?
+  - Based on the performance evaluation of your models, do you think the second and third phase of the third section were worth the extra effort?
+  - Was any model successful in diagnosing schizophrenia from voice?
   - How do the predictive models you built relate to the descriptive analysis conducted in the second section?
   - What is the explanatory scope of the analyses and procedures you conducted here, if any?
 
